@@ -16,13 +16,20 @@ r = int(input('r = '))
 x = int(input('x = '))
 y = int(input('y = '))
 
+trt.penup()
 trt.setpos(xc, yc)
+trt.right(90)
+trt.forward(r)
+trt.left(90)
+trt.pendown()
 trt.circle(r)
+trt.penup()
+trt.home()
 
 trt.setpos(x, y)
-trt.circle(1)
+trt.dot(10, 'red')
 
-if x ** 2 + y ** 2 > r ** 2:
+if (xc - x) ** 2 + (yc - y) ** 2 > r ** 2:
     trt.write('Точка вне окружности')
 else:
     trt.write('Точка внутри окружности')
