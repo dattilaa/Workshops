@@ -22,20 +22,7 @@ print('---------------------------')
 # Task 3
 n, m = map(int, input().split('x'))
 k = int(input())
-counter = 0
-print('---------------------------')
-
-if k < m * n:
-    for line in range(1, n):
-        if (line * m) >= k and ((n - line) * m) >= (n * m - k):
-            counter += 1
-    for column in range(1, m):
-        if (column * n) >= k and ((m - column) * n) >= (n * m - k):
-            counter += 1
-else:
-    print('Некорректный ввод')
-
-if counter > 0:
+if k == n or k % m == 0:
     print('Успешно')
 else:
     print('Неосуществимо')
