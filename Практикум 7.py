@@ -16,6 +16,10 @@ for i in input():
 print('---------------------------')
 
 # Task 3
+while (n := int(input())) ** 0.5 * 10 % 10 != 0:
+    print('Введите другое число:')
+print('Это число является полным квадратом')
+print('---------------------------')
 
 # Task 4
 n = int(input())
@@ -58,5 +62,34 @@ else:
     print('Верно')
 print('---------------------------')
 
+# Task 8
+n = int(input())
+counter = 0
+while n >= 1:
+    counter += 1
+    n //= 2
+print(counter)
+print('---------------------------')
 
+# Task 9
+n, k, r = map(int, input().split())
+counter = 1
+per = k / 100
+while n < r:
+    counter += 1
+    n *= (1 + per)
+print(counter)
+print('---------------------------')
+
+# Task 10
+counter = 0
+prev_temp = 0
+while (temp := float(input())) != 0:
+    if 37.4 <= temp <= 37.8:
+        if temp < prev_temp:
+            counter += 1
+        prev_temp = temp
+    else:
+        continue
+print(counter)
 
