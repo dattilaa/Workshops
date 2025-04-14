@@ -34,7 +34,7 @@ while (n := int(input())) != 0:
 print(counter)
 print('---------------------------')
 
-# Task 5 (not done yet)
+# Task 5
 list_1, list_2 = [], []
 flag = True
 for i in range(100000, 1000000):
@@ -102,6 +102,26 @@ for i in range(n + 1):
         counter_2 += j
 print((counter_1 + counter_2) // 2)
 print('---------------------------')
+
+# Task 10
+def count_staircases(N):
+    dp = [[0] * (N + 1) for _ in range(N + 1)]
+    for m in range(N + 1):
+        dp[0][m] = 1
+    for k in range(1, N + 1):
+        for m in range(1, N + 1):
+            if m > k:
+                dp[k][m] = dp[k][k]
+            else:
+                dp[k][m] = dp[k][m - 1] + dp[k - m][m - 1]
+    return dp[N][N] - 1
+
+
+N = int(input())
+if N > 100:
+    print('Ошибка')
+else:
+    print(f"Количество возможных лесенок: {count_staircases(N)}")
 
 
 
