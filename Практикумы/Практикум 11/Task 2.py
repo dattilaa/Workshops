@@ -1,4 +1,3 @@
-# Task 2
 line = input()
 counter = 0
 max_count = 0
@@ -11,3 +10,4 @@ for i in range(1, len(line)):
             max_count, counter = counter, 0
 
 print(max_count)
+
