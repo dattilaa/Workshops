@@ -10,7 +10,6 @@ for i in line:
         if counter > max_count:
             max_count, counter = counter, 0
 
-
 print(max_count)
 print('---------------------------')
 
@@ -371,6 +370,7 @@ print(check_chars(input()))
 print('---------------------------')
 
 # Task 17-20...
+
 
 
 
