@@ -12,7 +12,7 @@ def field_of_dreams():
     while attempts > 0:
         display_word = ''
         for l in word:
-            if l in letters or l == ' ':
+            if l in letters:
                 display_word += l
             else:
                 display_word += '*'
