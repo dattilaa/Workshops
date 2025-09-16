@@ -1,5 +1,7 @@
-f = open('input.txt', 'r', encoding='utf-8')
-o = open('output.txt', 'w', encoding='utf-8')
-for line in f:
-    line = line.strip()
-    o.write(line[0])
+line = input()
+letters = set()
+
+for i in line:
+    letters.add(i)
+
+print(len(letters))
