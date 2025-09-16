@@ -1,4 +1,3 @@
-# Task 7
 text = input()
 min_len = float('+inf')
 ru_l = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
@@ -18,3 +17,4 @@ for i in text.lower():
             min_len = len(word)
 
 print(min_len)
+
