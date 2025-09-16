@@ -1,4 +1,3 @@
-# Task 10
 text = input()
 min_len = float('+inf')
 ru_l = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
@@ -27,3 +26,4 @@ for k in words[1:]:
         words.remove(k)
 
 print(words[1:])
+
