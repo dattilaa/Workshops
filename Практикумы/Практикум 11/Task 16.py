@@ -1,4 +1,3 @@
-# Task 16
 def check_chars(text):
     chars = []
     for s in text:
