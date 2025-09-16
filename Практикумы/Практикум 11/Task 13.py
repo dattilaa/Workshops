@@ -1,4 +1,3 @@
-# Task 13
 def lucky(n):
     if len(n) % 2:
         return False
