@@ -1,17 +1,21 @@
-import os
+# Task 9
+text = input()
+min_len = float('+inf')
+ru_l = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+alphabet = [chr(i) for i in range(97, 123)]
+words = []
+for i in ru_l:
+    alphabet.append(i)
 
-target_dir = "simple"
-if not os.path.exists(target_dir):
-    os.mkdir(target_dir)
+if text[-1] in alphabet:
+    text += ' '
 
-with open('input.txt', 'r', encoding='utf-8') as f:
-    lines = f.readlines()
-
-output_filename = 'output.txt'
-with open(output_filename, 'w', encoding='utf-8') as o:
-    for i, line in enumerate(lines, 1):
-        if i % 2 == 0:
-            o.write(line)
-
-destination = os.path.join(target_dir, output_filename)
-os.rename(output_filename, destination)
+for i in text.lower():
+    if i not in alphabet:
+        ind = text.find(i)
+        word = text[:ind]
+        if word not in words:
+            words.append(word)
+        else:
+            print(word)
+            break
