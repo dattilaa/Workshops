@@ -1,4 +1,3 @@
-# Task 8
 text = input()
 ru_l = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 alphabet = [chr(i) for i in range(97, 123)]
@@ -22,3 +21,4 @@ lens.sort(reverse=True)
 
 for j in lens:
     print(words.get(j), end=' ')
+
