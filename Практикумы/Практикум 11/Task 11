@@ -1,0 +1,19 @@
+# Task 11
+turn = 1
+city = input()
+while city.lower() != 'не знаю':
+    turn += 1
+    prev_city, city = city, input()
+    if prev_city[-1] in ['ь', 'ы']:
+        if prev_city[-2] != city[0].lower():
+            break
+    else:
+        if prev_city[-1] != city[0].lower():
+            break
+
+if city.lower() == 'не знаю':
+    turn -= 1
+if turn % 2:
+    print('Победил Петя')
+else:
+    print('Победил Вася')
