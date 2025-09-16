@@ -1,5 +1,14 @@
-with open('input.txt', 'r', encoding='utf-8') as file:
-    info = file.read()
-    content = info.upper()
-with open('output.txt', 'w', encoding='utf-8') as output_file:
-    output_file.write(content)
+# Task 1
+line = input()
+counter = 0
+max_count = 0
+
+for i in line:
+    if i == ' ':
+        counter += 1
+    else:
+        if counter > max_count:
+            max_count, counter = counter, 0
+
+
+print(max_count)
