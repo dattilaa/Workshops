@@ -1,4 +1,3 @@
-# Task 5
 text1, text2, text3 = input().split()
 letters, unique_letters = set(), set()
 words = [text1, text2, text3]
@@ -17,3 +16,4 @@ for i in range(len(words)):
     letters.clear()
 
 print(unique_letters)
+
