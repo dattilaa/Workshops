@@ -1,22 +1,24 @@
-with open('input.txt', 'r', encoding='utf-8') as f:
-    steps_list = [int(line.strip()) for line in f]
+# Task 8
+text = input()
+ru_l = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+alphabet = [chr(i) for i in range(97, 123)]
+lens = []
+words = {}
+for i in ru_l:
+    alphabet.append(i)
 
-months = [
-    (steps_list[:31], 31),
-    (steps_list[31:59], 28),
-    (steps_list[59:90], 31),
-    (steps_list[90:120], 30),
-    (steps_list[120:151], 31),
-    (steps_list[151:181], 30),
-    (steps_list[181:212], 31),
-    (steps_list[212:243], 31),
-    (steps_list[243:273], 30),
-    (steps_list[273:304], 31),
-    (steps_list[304:334], 30),
-    (steps_list[334:365], 31)
-]
+if text[-1] in alphabet:
+    text += ' '
 
-with open('output.txt', 'w', encoding='utf-8') as o:
-    for days, divisor in months:
-        avg = sum(days) / divisor
-        o.write(f"{avg:.2f}\n")
+for i in text.lower():
+    if i not in alphabet:
+        ind = text.find(i)
+        word = text[:ind]
+        lens.append(len(word))
+        words[len(word)] = word
+        text = text[ind + 1:]
+
+lens.sort(reverse=True)
+
+for j in lens:
+    print(words.get(j), end=' ')
