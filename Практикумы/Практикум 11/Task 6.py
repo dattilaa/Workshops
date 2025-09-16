@@ -1,12 +1,8 @@
-f = open('input.txt', 'r', encoding='utf-8')
-o = open('output.txt', 'w', encoding='utf-8')
-line_list = []
-try:
-    for line in f:
-        line_list.append(line)
-    if (len(line_list) - 1) == int(line_list[0]):
-        o.write('YES')
+# Task 6
+text = input()
+for i in range(len(text) - 1, 0, -1):
+    if i == len(text) - 1:
+        print(text[i].upper(), end='')
     else:
-        o.write('NO')
-except ValueError:
-    o.write('ERROR')
+        print(text[i], end='')
+print(text[0].lower())
