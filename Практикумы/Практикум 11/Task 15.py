@@ -1,4 +1,3 @@
-# Task 15
 def cows_and_bulls():
     while True:
         num = input('Введите число: ')
