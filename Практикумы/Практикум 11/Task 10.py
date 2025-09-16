@@ -1,25 +1,29 @@
-import datetime as dt
+# Task 10
+text = input()
+min_len = float('+inf')
+ru_l = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+alphabet = [chr(i) for i in range(97, 123)]
+words = []
+for i in ru_l:
+    alphabet.append(i)
 
-f = open('input.txt', 'r', encoding='utf-8')
-o = open('output.txt', 'w', encoding='utf-8')
-lines_list = []
-current_year =(f'.{dt.datetime.today().year}')
-for line in f:
-    line = line.strip()
-    lines_list.append(line)
-current_date = dt.datetime.strptime(
-    str(lines_list[0])
-    + str(current_year),
-    '%d.%m.%Y').date()
+if text[-1] in alphabet:
+    text += ' '
 
-for i in lines_list:
-    if i != lines_list[0] and i != lines_list[1]:
-        box_num = i.split()[0]
-        date = dt.datetime.strptime(
-            str(i.split()[1]
-                + current_year),
-            '%d.%m.%Y').date()
-        time_difference = current_date - date
-        if time_difference > dt.timedelta(days=3):
-            answ = (f'{box_num} \n')
-            o.write(answ)
+for i in text.lower():
+    if i not in alphabet:
+        ind = text.find(i)
+        word = text[:ind]
+        if word not in words:
+            words.append(word)
+        text = text[ind + 1:]
+
+for k in words[1:]:
+    flag = True
+    for m in k:
+        if k.count(m) > 1:
+            flag = False
+    if not flag:
+        words.remove(k)
+
+print(words[1:])
