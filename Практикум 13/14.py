@@ -16,19 +16,19 @@ def find_substring(text, substr) -> int:
     text_len = len(text)
 
     if text_len >= substr_len:
-        index = substr_len - 1
+        i = substr_len - 1
 
-        while index < text_len:
+        while i < text_len:
             k = 0
             flag = False
             for j in range(substr_len - 1, -1, -1):
-                if text[index - k] != substr[j]:
+                if text[i - k] != substr[j]:
                     if j == substr_len - 1:
-                        offset = offsets[text[index]] if offsets.get(text[index], False) else offsets['*']
+                        offset = offsets[text[i]] if offsets.get(text[i], False) else offsets['*']
                     else:
                         offset = offsets[substr[j]]
 
-                    index += offset
+                    i += offset
                     flag = True
                     break
 
@@ -59,5 +59,4 @@ def all_substring_enters(text, substr) -> list:
     return indices
 
 
-print(all_substring_enters('ATGGGATGGACATGACTACCGATGCGGGATTGGCGAG', 'ATGG'))
-
+print(all_substring_enters('here is a simple example', 'example'))
