@@ -16,26 +16,26 @@ def find_substring(text, substr) -> int:
     text_len = len(text)
 
     if text_len >= substr_len:
-        i = substr_len - 1
+        index = substr_len - 1
 
-        while i < text_len:
+        while index < text_len:
             k = 0
             flag = False
             for j in range(substr_len - 1, -1, -1):
-                if text[i - k] != substr[j]:
+                if text[index - k] != substr[j]:
                     if j == substr_len - 1:
-                        offset = offsets[text[i]] if offsets.get(text[i], False) else offsets['*']
+                        offset = offsets[text[index]] if offsets.get(text[index], False) else offsets['*']
                     else:
                         offset = offsets[substr[j]]
 
-                    i += offset
+                    index += offset
                     flag = True
                     break
 
                 k += 1
 
             if not flag:
-                return i - k + 1
+                return index - k + 1
         else:
             return -1
 
