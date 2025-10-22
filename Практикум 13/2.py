@@ -1,12 +1,13 @@
-def print_n_fibnums(n):
+def print_n_fibnums(num):
     fib_seq = []
-    for i in range(n):
+    for i in range(num):
         if i <= 1:
             fib_seq.append(1)
         else:
             fib_seq.append(fib_seq[i - 2] + fib_seq[i - 1])
 
     print(fib_seq)
+
 
 
 print_n_fibnums(int(input()))
