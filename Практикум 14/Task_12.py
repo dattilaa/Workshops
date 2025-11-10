@@ -29,7 +29,7 @@ raw_text = ''.join(words)
 hole_words = [word for word in words if count_letters_with_holes(word) >= 2]
 holes_num = count_letters_with_holes(raw_text)
 
-print(raw_text)
 print(f'Количество букв с отверстиями: {holes_num}')
 print(f'Количество букв без отверстий: {len(raw_text) - holes_num}')
+
 print(hole_words)
