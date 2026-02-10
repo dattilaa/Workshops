@@ -13,4 +13,10 @@ def count_courses(n: int) -> int:
 
     return len(choice)
 
-print(count_courses(int(input())))
+
+def main() -> None:
+    print(count_courses(int(input())))
+
+
+if __name__ == '__main__':
+    main()
