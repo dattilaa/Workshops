@@ -11,6 +11,7 @@ def unique_preferences(pref: set, friends_pref: set) -> int:
 def main() -> None:
     sweet_prefs = set(list(input().split()))
     friends = set()
+    
     for friend in range(n := int(input())):
         prefs = list(input().split())
         for pref in prefs:
@@ -21,3 +22,4 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+
