@@ -6,8 +6,8 @@ def sieve_of_eratosthenes(n: int) -> list:
     """
     nums = set(i for i in range(2, n + 1))
     for num in sorted(nums):
-        aliquot = set(j for j in range(num ** 2, n + 1) if not j % num)
-        nums -= aliquot
+        aliquots = set(aliquot for aliquot in range(num ** 2, n + 1) if not aliquot % num)
+        nums -= aliquots
 
     return sorted(list(nums))
 
@@ -18,5 +18,7 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+
+
 
 
