@@ -4,10 +4,7 @@ def diff_digits(n: int) -> bool:
     :param n: users number
     :return: True, False
     """
-    digits_list = sorted(list(str(n)))
-    digits_setlist = sorted(list(set(str(n))))
-
-    return digits_list == digits_setlist
+    return len(list(str(n))) == len(set(str(n)))
 
 
 def solve_hod_mat() -> list:
@@ -15,7 +12,7 @@ def solve_hod_mat() -> list:
     Shows all solutions for equation: HOD + HOD + HOD = MAT
     :return: solutions
     """
-    hod = set(i for i in range(100, 1000) if diff_digits(i) and i * 3 < 1000)
+    hod = set(i for i in range(100, 334) if diff_digits(i))
     hod_mat = []
 
     for num in hod:
@@ -34,5 +31,6 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+
 
 
