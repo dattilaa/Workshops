@@ -7,12 +7,12 @@ def diff_digits(n: int) -> bool:
     return len(list(str(n))) == len(set(str(n)))
 
 
-def solve_hod_mat() -> list:
+def solve_hod_mat() -> list[tuple[int, int]]:
     """
     Shows all solutions for equation: HOD + HOD + HOD = MAT
     :return: solutions
     """
-    hod = set(i for i in range(100, 334) if diff_digits(i))
+    hod = set(i for i in range(100, 1000) if diff_digits(i) and i * 3 < 1000)
     hod_mat = []
 
     for num in hod:
@@ -31,6 +31,10 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+
+
+
+
 
 
 
