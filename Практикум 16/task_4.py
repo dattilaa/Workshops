@@ -10,12 +10,13 @@ def is_in_intersection(n: int, set_1: set, set_2: set) -> bool:
 
 
 def main() -> None:
-    set_1 = set(list(map(int, input().split())))
-    set_2 = set(list(map(int, input().split())))
+    set_1 = set(map(int, input().split()))
+    set_2 = set(map(int, input().split()))
     n = int(input())
 
     print(is_in_intersection(n, set_1, set_2))
 
 
 if __name__ == '__main__':
+
     main()
