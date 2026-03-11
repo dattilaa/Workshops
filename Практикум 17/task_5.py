@@ -37,6 +37,7 @@ def count_descendants(family: dict, member: str, checked=None) -> int:
 
     return counter
 
+
 def main() -> None:
     tree = create_family_tree(int(input()))
     name = input()
@@ -45,4 +46,5 @@ def main() -> None:
 
 
 if __name__ == '__main__':
+
     main()
