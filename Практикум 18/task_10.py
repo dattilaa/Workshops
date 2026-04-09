@@ -1,0 +1,49 @@
+import time
+
+
+def time_try_restrict(time_limit: float, max_calls: int, period: float):
+    """
+    function including decorator attempting to do function
+    :param time_limit: limit of procedure
+    :param max_calls: amount of calls
+    :param period: period
+    :return: decorator
+    """
+
+    def decorator(func):
+        """
+        decorator attempting to use func
+        :param func: function
+        :return: wrapper
+        """
+        call_times = []
+
+        def wrapper(*args, **kwargs):
+
+            now = time.time()
+
+            call_times[:] = [t for t in call_times if now - t < period]
+
+            if len(call_times) >= max_calls:
+                raise Exception(
+                    f'Call limit exceeded: {max_calls} calls per {period} sec'
+                )
+
+            call_times.append(now)
+
+            start = time.time()
+            result = func(*args, **kwargs)
+            end = time.time()
+
+            if end - start > time_limit:
+                raise Exception(
+                    f'Time limit exceeded: {time_limit} sec'
+                )
+
+            return result
+
+        return wrapper
+
+    return decorator
+
+
